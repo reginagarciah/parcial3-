@@ -1,0 +1,200 @@
+\documentclass[10pt,xcolor={dvipsnames}]{beamer}
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+  
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+
+% Change the bar colors:
+\setbeamercolor{Feather}{fg=NavyBlue!20,bg=NavyBlue}
+
+% Change the color of the structural elements:
+\setbeamercolor{structure}{fg=NavyBlue}
+
+% Change the frame title text color:
+\setbeamercolor{frametitle}{fg=black!5}
+
+% Change the normal text colors:
+\setbeamercolor{normal text}{fg=black!75,bg=gray!5}
+
+%% Change the block title colors
+\setbeamercolor{block title}{use=Feather,bg=Feather.fg, fg=black!90} 
+
+
+% Change the logo in the upper right circle:
+%\renewcommand{\logofile}{example-grid-100x100pt} 
+%% This is an image that comes with the LaTeX installation
+% Adjust scale of the logo w.r.t. the circle; default is 0.875
+% \renewcommand{\logoscale}{0.55}
+
+% Change the background image on the title and final page.
+% It stretches to fill the entire frame!
+% \renewcommand{\backgroundfile}{example-grid-100x100pt}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+% \usepackage{helvet}
+
+%% Load different font packages to use different fonts
+%% e.g. using Linux Libertine, Linux Biolinum and Inconsolata
+% \usepackage{libertine}
+% \usepackage{zi4}
+
+%% e.g. using Carlito and Caladea
+\usepackage{carlito}
+\usepackage{caladea}
+\usepackage{zi4}
+
+%% e.g. using Venturis ADF Serif and Sans
+% \usepackage{venturis}
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+      \textbf{Proyecto final}
+}
+
+\subtitle[Proyecto final]
+{
+      \textbf{Métodos numéricos}
+}
+
+\author[Equipo 5, Equipo 5]
+{      Equipo 5 \\
+      {\ttfamily Caso de estudio con una ecuación diferencial}\\[1em]
+     Método de Euler
+}
+
+\institute[]
+{%
+      Tecnológico de Monterrey\\
+      Campus GDA, Campus Santa Fe
+}
+
+\date{\today}
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------
+% THE TITLEPAGE
+%-------------------------------------------------------
+
+{\1% % this is the name of the PDF file for the background
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}}
+
+
+\begin{frame}{Contenido}{}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------------
+\section{Introducción}
+%-------------------------------------------------------
+\subsection{Ecuación diferencial}
+\begin{frame}{Introducción}{Ecuación diferencial}
+%-------------------------------------------------------
+
+  \begin{itemize}
+    \item<1-> Dentro de este proyecto, se encontrará con un listado de los diversos métodos qué existen dentro de este curso, empleados para la resolución de problemáticas con métodos numéricos. Para la demostración de su éxito, se realizó una previa investigación qué nos ayudará a la selección de una problemática de índole real, qué nos permitiese realizar la aplicación de uno de los métodos  numéricos para su resolución en ingeniería. Posteriormente, se definió el método de Euler como el método a ser aplicado.
+
+    \ 
+  \end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\section{Método de Euler}
+%-------------------------------------------------------
+\subsection{Aplicación de ecuación diferencial}
+\begin{frame}{Método de Euler}{Aplicación de ecuación diferencial}
+%-------------------------------------------------------
+
+\begin{block}{}
+
+  \begin{itemize}
+    \item {\tt El método de Euler, es una técnica utilizada para analizar una ecuación diferencial, que usa la idea de linealidad local o aproximación lineal , donde usamos pequeñas líneas tangentes en una distancia corta para aproximar la solución a un problema de valor inicial. Es un procedimiento numérico de primer orden para resolver ecuaciones diferenciales ordinarias (EDO) con un valor inicial dado y es el método explícito más básico para la integración numérica de ecuaciones diferenciales ordinarias y es el método de Runge-Kutta más simple. 
+}
+   
+  \end{itemize}
+\end{block}
+\end{frame}
+
+%-------------------------------------------------------
+\subsection{Método de Euler}
+\begin{frame}{Descripción del problema}{Método de Euler}
+%-------------------------------------------------------
+  Hoy en día, la población está creciendo de una manera exponencial, por lo que hay maneras de calcular cuánto aumentará, en número de personas, en cualquier lugar por x tiempo. Por ejemplo, en este caso, tomamos una ecuación sobre población para calcular el crecimiento en 3 años. Sabemos que en t=2, donde t equivale al número años, la población aumenta 1500 personas. Para calcular el crecimiento entre 2 y 5 años resolvimos por el método de Euler y se presentará a continuación. 
+
+  
+\end{frame}
+     
+
+%-------------------------------------------------------
+\subsection{}
+\begin{frame}{Resultados}{Excel}
+%-------------------------------------------------------
+
+  
+  \includegraphics[scale=0.6]{excel met.png}
+  \item
+  \caption {Figura 1. Resultados en Excel}
+  
+\end{frame}
+
+%-------------------------------------------------------
+\section{Resultados}
+\subsection{Excel y Matlab}
+\begin{frame}{Resultados}{Matlab}
+%-------------------------------------------------------
+ \includegraphics[scale=0.5]{matlab1.png}
+  \item
+  \caption {Figura 2. Resultados en Matlab}
+  
+\end{frame}
+
+\begin{frame}{Análisis de resultados}
+
+ Lo que se puede observar al comparar el Excel con el código en Matlab es que nos arrojan el mismo resultado, a lo que refiere que la manera de usar las dos herramientas fue correcta. Podemos observar que en un periodo de 4.85 años (58 meses y medio), el lugar donde fue tomada la muestra aumentó en 3 años, de 1500 a 1729 personas. 
+
+\end{frame}
+
+
+%-------------------------------------------------------
+\subsection{Conclusiones}
+\begin{frame}{Conclusiones}
+%-------------------------------------------------------
+Una vez realizados los cálculos correspondientes, los cuales  nos fueron brindados por matlab, a través de un código creado dentro del software mismo, para la determinación del crecimiento demográfico, en comparación con una tabla excel; se concluye la eficiencia del método aplicado para la resolución del problema. Las problemáticas aplicadas, son de caso real y posible frecuencia dentro de la labor ingenieril.  De igual manera, se muestran las tablas de resolución dentro de excel, qué nos permiten corroborar resultados y analizar de una manera un poco más detallada su realización.
+
+
+\end{frame}
+
+
+{\1
+\begin{frame}[plain,noframenumbering]
+  \finalpage{¡Gracias!}
+\end{frame}}
+
+\end{document}
