@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{Reporte Técnico Parcial 3 Métodos Numérico}
+\author{A01026400, A01733222, A01228334, A01351413 }
+\date{noviembre 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+\item Dentro de este proyecto, se encontrará con un listado de los diversos métodos qué existen dentro de este curso, empleados para la resolución de problemáticas con métodos numéricos. Para la demostración de su éxito, se realizó una previa investigación qué nos ayudará a la selección de una problemática de índole real, qué nos permitiese realizar la aplicación de uno de los métodos  numéricos para su resolución en ingeniería. Posteriormente, se definió el método de Euler como el método a ser aplicado. 
+
+El método de Euler, es una técnica utilizada para analizar una ecuación diferencial, que usa la idea de linealidad local o aproximación lineal , donde usamos pequeñas líneas tangentes en una distancia corta para aproximar la solución a un problema de valor inicial. Es un procedimiento numérico de primer orden para resolver ecuaciones diferenciales ordinarias (EDO) con un valor inicial dado y es el método explícito más básico para la integración numérica de ecuaciones diferenciales ordinarias y es el método de Runge-Kutta más simple. 
+Este método se basa en la siguiente fórmula:
+
+ \includegraphics[scale=0.8]{formeu.png}
+    \label{fig:my_label}
+    
+    
+\item La idea es que si bien la curva es inicialmente desconocida, su punto de partida, que denotamos por  Ao es conocido. Luego, de la ecuación diferencial, la pendiente a la curva en Ao se puede calcular, y por tanto, la recta tangente. Da un pequeño paso a lo largo de esa línea tangente hasta un punto A1
+ A lo largo de este pequeño paso, la pendiente no cambia sustancialmente, por lo que A1 se encontrará cerca de la curva. Si pretendemos que A1 todavía está en la curva, el mismo razonamiento que para el punto Ao arriba se puede utilizar. Después de varios pasos, una curva poligonal Ao, A1, A2, A3, A4,...An  se calcula. En general, esta curva no diverge demasiado de la curva desconocida original, y el error entre las dos curvas puede reducirse si el tamaño del paso es lo suficientemente pequeño y el intervalo de cálculo es finito.
+ 
+\includegraphics[scale=0.8]{curvaeu.png}
+\item 
+ \caption{Fig. 1. Curva desconocida en azul.
+ Curva calculada con Euler en Rojo}
+    \label{fig:my_label} 
+
+
+
+\section{Descripción del problema a resolver}
+\item Para este proyecto, se realizó la investigación de un caso de tipo real, dentro del cual se encontrarán involucradas ecuaciones diferenciales, por lo que se determinó el planteamiento de la aplicación de una integral. Sea en lo que nos queremos especializar, un ingeniero debe de ser capaz de resolver problemas de matemáticas básicos y de cualquier tipo, por eso quisimos hacer un ejemplo un poco diferente. 
+
+Hoy en día, la población está creciendo de una manera exponencial, por lo que hay maneras de calcular cuánto aumentará, en número de personas, en cualquier lugar por x tiempo. Por ejemplo, en este caso, tomamos una ecuación sobre población para calcular el crecimiento en 3 años. Sabemos que en t=2, donde t equivale al número años, la población aumenta 1500 personas. Para calcular el crecimiento entre 2 y 5 años resolvimos por el método de Euler y se presentará a continuación. 
+ 
+La primera herramienta que utilizaremos es Excel, ya que ahí haremos los cálculos con el método de Simpson y resolveremos este problema. Después correremos el código en Matlab para comprobar que nuestros resultados sean correctos. 
+
+\section{Resultados}
+
+
+\subsection{Excel}
+
+ \includegraphics[scale=0.6]{excelfinal.png}
+    \caption{Fig. 2 Excel Método de Euler}
+    \label{fig:my_label}
+    
+
+\subsection{Matlab}
+    \includegraphics[scale=0.4]{matlabfinal.png}
+    \item
+    \caption{Fig. 3 Código método de Euler en Matlab}
+    \label{fig:my_label}
+    
+\subsection{Análisis de Resultados}
+\item Lo que se puede observar al comparar el Excel con el código en Matlab es que nos arrojan el mismo resultado, a lo que refiere que la manera de usar las dos herramientas fue correcta. Podemos observar que en un periodo de 4.85 años (58 meses y medio), el lugar donde fue tomada la muestra aumentó en 3 años, de 1500 a 1729 personas. 
+
+    
+
+\section{Conclusiones}
+\item Una vez realizados los cálculos correspondientes, los cuales  nos fueron brindados por matlab, a través de un código creado dentro del software mismo, para la determinación del crecimiento demográfico, en comparación con una tabla excel; se concluye la eficiencia del método aplicado para la resolución del problema. Las problemáticas aplicadas, son de caso real y posible frecuencia dentro de la labor ingenieril.  De igual manera, se muestran las tablas de resolución dentro de excel, qué nos permiten corroborar resultados y analizar de una manera un poco más detallada su realización.
+
+
+\section{Referencias}
+\item D. Kincaid y W. Cheney, Análisis Numérico. Las Matemáticas del Cálculo Cientıfico, Addison-Wesley Sudamericana, Wilmington, 2012.
+
+\item KhanAcademy, 2017. Calcular el crecimiento de una población con una integral. Ejemplo | Khan Academy en Español. [image] Available at: \item <https://www.youtube.com/watch?v=Sx0Kc0R85Q8> [Accessed 26 November 2021].
+
+
+
+
+
+
+
+
+\end{document}
+
